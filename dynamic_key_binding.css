@@ -47,3 +47,19 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.shade-087 {
+    color: rgb(34, 34, 34) !important;
+}
+
+.font-weight-medium {
+    font-weight: 400;
+}
+
+.line-height-medium {
+    line-height: 20px;
+}
+
+.font-size-medium {
+    font-size: 16px
+}
