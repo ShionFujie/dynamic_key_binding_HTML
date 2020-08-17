@@ -38,3 +38,12 @@ body {
 .margin-top-medium {
     margin-top: 16px
 }
+
+.text-center {
+    text-align: center;
+}
+
+.flexbox-centered {
+    align-items: center;
+    justify-content: center;
+}
