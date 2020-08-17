@@ -4,7 +4,9 @@
         <link rel="stylesheet" href="dynamic_key_binding.css">
     </head>
     <script type="text/javascript">
-        document.onkeydown = (({key, shiftKey, ctrlKey, altKey, metaKey, code}) => {
+        document.onkeydown = (event => {
+            event.preventDefault()
+            const {key, shiftKey, ctrlKey, altKey, metaKey, code} = event
             var preview = ""
             const keyPreview = filterAcceptableKey(code)
             if (ctrlKey) preview += "⌃+"
@@ -12,7 +14,7 @@
             if (altKey) preview += "⌥+"
             if (metaKey) preview += "⌘+"
             if (keyPreview !== undefined) preview += keyPreview
-            document.getElementById('previewer').innerText = preview
+            document.getElementById('previewer').value = preview
         })
         function filterAcceptableKey(code) {
             return acceptableKeys[code]
@@ -85,7 +87,9 @@
             <div style="border: 0px; background: rgb(255, 255, 255); overflow: auto; border-radius: 4px; outline: none; padding: 0px; margin-top: 20vh; margin-left: 24px; margin-right: 24px; max-width: 400px; flex-grow: 1; box-shadow: rgba(29, 17, 17, 0.15) 0px 5px 12px;">
                 <div class="flexbox flexbox-direction-column flexbox-grow-1 radius-small border-width-normal border-solid border-color-shade">
                     <div class="margin-top-medium margin-horizontal-smaller">Press key combination and then confirm ENTER</div>
-                    <div class="margin-smaller" id="previewer">test</div>
+                    <div class="margin-smaller">
+                        <input id="previewer"/>
+                    </div>
                 </div>
             </div>
         </div>
