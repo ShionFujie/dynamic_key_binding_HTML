@@ -9,10 +9,10 @@
             const {key, shiftKey, ctrlKey, altKey, metaKey, code} = event
             var preview = ""
             const keyPreview = filterAcceptableKey(code)
-            if (ctrlKey) preview += "⌃+"
-            if (shiftKey) preview += "⇧+"
-            if (altKey) preview += "⌥+"
-            if (metaKey) preview += "⌘+"
+            if (ctrlKey) preview += "⌃"
+            if (shiftKey) preview += "⇧"
+            if (altKey) preview += "⌥"
+            if (metaKey) preview += "⌘"
             if (keyPreview !== undefined) preview += keyPreview
             document.getElementById('previewer').value = preview
         })
